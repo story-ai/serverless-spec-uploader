@@ -46,7 +46,7 @@ const uploadS3 = (serverless, options) => {
           Bucket: serverless.service.custom.spec_bucket,
           Body: JSON.stringify(spec),
           ContentType: "application/json",
-          Key: serverless.service.service + ".json"
+          Key: serverless.service.service + "-" + serverless.service.provider.stage + ".json"
         },
         stage,
         region
